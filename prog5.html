@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html >
+<head>
+ <title>Student Details with CGPA</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"> 
+</script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="myController">
+ <h2>Student Details</h2>
+ <p>Total number of students: {{ students.length }}</p>
+ <table border="1">
+ <tr>
+ <th>Name</th>
+ <th>CGPA</th>
+ </tr>
+ <tr ng-repeat="student in students">
+ <td>{{ student.name }}</td>
+ <td>{{ student.cgpa }}</td>
+ </tr>
+ </table>
+</div>
+<script src="Prog5.js"> </script> 
+</body>
+</html>

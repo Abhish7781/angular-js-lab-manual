@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>To-Do List Application</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js">
+</script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="myController">
+ <h2>To-Do List</h2>
+ <ul>
+ <li ng-repeat="task in tasks">
+ {{ task.name }}
+ <button ng-click="editTask(task)">Edit Task</button>
+ <button ng-click="deleteTask(task)">DeleteTask</button>
+ </li>
+ </ul>
+ <div>
+ <label>New Task: </label>
+ <input type="text" ng-model="newTaskName">
+ <button ng-click="addTask()">Add Task</button>
+ </div>
+ <div ng-show="editingTask">
+ <label>Edit Task: </label>
+ <input type="text" ng-model="editedTaskName">
+ <button ng-click="saveTask()">Save</button>
+ <button ng-click="cancelEdit()">Cancel</button>
+</div>
+</div>
+<script src="Prog6.js"> </script> 
+</body>
+</html>
