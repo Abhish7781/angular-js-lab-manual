@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LOGIN FORM APPLICATION</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    </head>
+    <body ng-app="myapp">
+        <div ng-controller="logincontroller">
+            <h2>Login Form</h2>
+            <form name="loginform" novalidate>
+                <label>Username:</label>
+                <input type="text" ng-model="user.username" name="username" required>
+                <span ng-show="loginform.username.$error.required && loginform.username.$dirty">Username is required</span>
+                <br>
+                <br>
+                <label>Password:</label>
+                <input type="password" ng-model="user.password" name="password" ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/" required>
+                <span ng-show="loginform.password.$error.required && loginform.password.$dirty">Password is required</span>
+                <span ng-show="loginform.password.$error.pattern && loginform.password.$dirty">Password must be alphanumeric and atleast 8 characters long, also add a special charecter</span>
+                <br>
+
+                <button ng-click="login()" ng-disabled="loginform.$invalid">Login</button>
+            </form>
+        
+            <div ng-show="isloggedin">
+                <p>Login successful!Welcome ,{{user.username}}!</p>
+            </div>
+        </div>
+    <script src="prog8.js"></script>
+    </body>
+</html>
