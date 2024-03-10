@@ -1,11 +1,10 @@
 var app = angular.module('myApp', []);
  
 app.controller('ItemController', function ($scope) {
-    // Default items
     $scope.items = [
         { name: 'Apple' },
-        { name: 'Banana' },
-        { name: 'Orange' }
+        { name: 'orange' },
+        { name: 'chocolate' }
     ];
  
     $scope.newItemName = "";
